@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 export const useColorStore = defineStore('colors', {
   state: () => {
     return {
-      colorInput: '#ededed sldkfjsd posdjf sdpogj #eee hej #e100f3 #papapa',
+      colorInput: '#ededed sldkfjsd posdjf sdpogj #eee #eeeeee hej #e100f3 #papapa',
       colorInputParsed: [],
     }
   },
@@ -17,7 +17,11 @@ export const useColorStore = defineStore('colors', {
       //const regex = /#([A-F0-9]{3,4}|[A-F0-9]{6}|[A-F0-9]{8})/ig
       const foundColors = input.match(regex)
       console.log(foundColors)
-      this.colorInputParsed = foundColors
+      this.colorInputParsed = foundColors.map((i) => {
+        return {
+          hex: i,
+        }
+      })
     },
   },
 })
