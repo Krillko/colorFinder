@@ -4,7 +4,8 @@ export const useColorStore = defineStore('colors', {
   state: () => {
     return {
       colorInput: '#ededed sldkfjsd posdjf sdpogj #eee #eeeeee hej #e100f3 #papapa',
-      colorInputParsed: [],
+      colorInputParsed: ['#ededed', '#eee', '#eeeeee', '#e100f3'],
+      matchColor: '',
     }
   },
   actions: {

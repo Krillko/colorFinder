@@ -8,6 +8,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "colorjs.io": "^0.4.0",
     "pinia": "^2.0.22",
     "vue": "^3.2.40"
   },
