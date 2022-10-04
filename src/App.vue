@@ -1,12 +1,17 @@
 <template>
-  <main>
-    <LoadReferences />
-    <ReferenceInput />
-    <SaveReference />
-
-    <FoundColors />
-    <MatchInput />
-    <MatchedColors />
+  <main class="flex w-full items-start">
+    <div class="first basis-1/3 p-8 ml-8">
+      <MatchInput />
+      <MatchedColors />
+    </div>
+    <div class="second basis-1/3 p-8">
+      <FoundColors />
+    </div>
+    <div class="third basis-1/3 mr-8 mt-8 stdbox">
+      <ReferenceInput />
+      <LoadReferences />
+      <SaveReference />
+    </div>
   </main>
 </template>
 

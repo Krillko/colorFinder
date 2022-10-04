@@ -1,14 +1,11 @@
 <template>
-  <div>
+  <div class="stdbox">
     <h2>Found</h2>
     <div class="swatches">
-      <div
-        v-for="color in colorStore.colorInputParsed"
-        :key="color.hex"
-        :style="{
-          background: color.hex,
-        }"
-        class="swatch"
+      <ColorSwatch
+        v-for="(color, index) in colorStore.colorInputParsed"
+        :key="`${color.hex}-${index}`"
+        :hex="color.hex"
       />
     </div>
   </div>
@@ -16,13 +13,13 @@
 
 <script setup lang="ts">
 import { useColorStore } from '../store/colorStore'
+import ColorSwatch from './ColorSwatch.vue'
 
 const colorStore = useColorStore()
 </script>
 
 <style scoped lang="postcss">
 .swatches {
-  display: flex;
 }
 .swatch {
   width: 80px;

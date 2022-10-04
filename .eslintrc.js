@@ -27,17 +27,13 @@ module.exports = {
     'eol-last': ['error', 'always'],
     'object-curly-spacing': ['error', 'always'],
     'vue/singleline-html-element-content-newline': 'off',
-    'vue/v-on-event-hyphenation': 'off', // <- perhaps remove later
-    'vue/require-explicit-emits': 'off', // <- should remove later
+    'vue/v-on-event-hyphenation': 'off',
+    'vue/require-explicit-emits': 'warn',
     'vue/no-v-html': 'off',
     'vue/max-attributes-per-line': ['warn', {
       'singleline': 2,
     }],
     'vue/multi-word-component-names': 'warn',
-    /**
-     * @important - should we keep ban-ts-comment
-     * we probably need it for 3rd party things, like plugins/fontawsome.ts
-     */
     '@typescript-eslint/ban-ts-comment': 'warn',
     'indent': ['error', 2, { 'SwitchCase': 1 }],
     'no-multiple-empty-lines': ['error', { 'max': 1 } ],
@@ -45,7 +41,8 @@ module.exports = {
     'space-before-blocks': 'error',
     'keyword-spacing': ['error', {
       'after': true,
-      'before': true
+      'before': true,
     }],
+    'vue/require-default-prop': 'off',
   },
 }

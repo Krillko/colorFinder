@@ -1,14 +1,14 @@
 <template>
-  <div>
+  <div class="stdbox">
     <h1>Matched</h1>
-    <div v-if="matches.length" class="matches">
-      <div v-for="match in matches" class="match">
-        <div
-          :style="{
-            background: match.hex,
-          }"
-          class="swatch"
-        />
+    <div v-if="matches.length" class="flex flex-col">
+      <div
+        v-for="(match, index) in matches"
+        :key="`${match.hex}-${index}`"
+        class="match"
+      >
+        <ColorSwatch :hex="match.hex" />
+
         <div :title="match.matchPercent" v-html="match.title" />
       </div>
     </div>
@@ -19,6 +19,7 @@
 import { useColorStore } from '../store/colorStore'
 import { computed } from 'vue'
 import Color from 'colorjs.io'
+import ColorSwatch from './ColorSwatch.vue'
 const colorStore = useColorStore()
 
 function round(
@@ -76,15 +77,5 @@ const matches = computed(()=> {
 </script>
 
 <style scoped lang="postcss">
-.matches {
-  display: flex;
-}
-.match {
-  margin: 0 16px 16px 0;
-}
-.swatch {
-  width: 80px;
-  height: 80px;
 
-}
 </style>

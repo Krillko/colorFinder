@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="stdbox">
     <input
       v-model="textInput"
       type="text"
