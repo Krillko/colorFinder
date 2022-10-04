@@ -21,17 +21,10 @@
 <script setup lang="ts">
 import { ref, onMounted, Ref, computed } from 'vue'
 import { useColorStore } from '../store/colorStore'
+import { saveFormat } from '../types/saving'
 const colorStore = useColorStore()
 
-type reference = {
-  name: string,
-  input: string,
-}
-type saves = {
-  references: reference[]
-}
-
-const localStorageSaves: Ref<saves> = ref({})
+const localStorageSaves: Ref<saveFormat> = ref({})
 const selected = ref('')
 
 const saveAble = computed(() => {
@@ -42,8 +35,6 @@ onMounted(() => {
   const toLoad = window.localStorage.getItem('colorFinder')
   if (toLoad) {
     localStorageSaves.value = JSON.parse(toLoad)
-
-    console.log(localStorageSaves.value)
   }
 })
 
