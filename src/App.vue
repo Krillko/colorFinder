@@ -2,7 +2,7 @@
   <main class="flex w-full items-start">
     <div class="first basis-1/3 p-8 ml-8">
       <MatchInput />
-      <MatchedColors />
+      <ReferenceColors />
     </div>
     <div class="second basis-1/3 p-8">
       <FoundColors />
@@ -19,7 +19,7 @@
 import ReferenceInput from '@/components/ReferenceInput.vue'
 import FoundColors from '@/components/FoundColors.vue'
 import MatchInput from '@/components/MatchInput.vue'
-import MatchedColors from '@/components/MatchedColors.vue'
+import ReferenceColors from '@/components/ReferenceColors.vue'
 import SaveReference from '@/components/SaveReference.vue'
 import LoadReferences from '@/components/LoadReferences.vue'
 </script>
