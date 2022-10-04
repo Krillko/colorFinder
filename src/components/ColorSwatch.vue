@@ -28,6 +28,7 @@ defineProps({
   padding: 3px 3px 12px 3px;
   transform: rotate(-3deg);
   margin: 0 8px 8px 0;
+  background: white;
   >div {
     width: 50px;
     height: 50px;

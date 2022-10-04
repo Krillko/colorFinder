@@ -5,7 +5,7 @@
       <MatchedColors />
     </div>
     <div class="second basis-1/3 p-8">
-      <FoundColors />
+      <ReferenceColors />
     </div>
     <div class="third basis-1/3 mr-8 mt-8 stdbox">
       <ReferenceInput />
@@ -19,7 +19,7 @@
 
 <script setup lang="ts">
 import ReferenceInput from './components/ReferenceInput.vue'
-import FoundColors from './components/FoundColors.vue'
+import ReferenceColors from './components/ReferenceColors.vue'
 import MatchInput from './components/MatchInput.vue'
 import MatchedColors from './components/MatchedColors.vue'
 import SaveReference from './components/SaveReference.vue'

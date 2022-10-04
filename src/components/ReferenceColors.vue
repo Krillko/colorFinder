@@ -1,13 +1,14 @@
 <template>
   <div class="stdbox">
     <h2>Found</h2>
-    <div class="swatches">
+    <div v-if="colorStore.colorInputParsed.length" class="swatches">
       <ColorSwatch
         v-for="(color, index) in colorStore.colorInputParsed"
         :key="`${color.hex}-${index}`"
         :hex="color.hex"
       />
     </div>
+    <p v-else>No colors found</p>
   </div>
 </template>
 

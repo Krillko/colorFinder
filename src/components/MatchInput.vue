@@ -2,13 +2,19 @@
   <div class="stdbox">
     <h1>Test color:</h1>
     <p>Select a color, or input as hex</p>
-    <input
-      v-model="textInput"
-      type="text"
-      class="input input-bordered"
-      autofocus
-    >
-    <input v-model="colorStore.matchColor" type="color">
+    <div class="flex">
+      <input
+        v-model="textInput"
+        type="text"
+        class="input input-bordered"
+        autofocus
+      >
+      <input
+        v-model="colorStore.matchColor"
+        type="color"
+        class="colorInput ml-2"
+      >
+    </div>
   </div>
 </template>
 
@@ -48,4 +54,7 @@ watch(matchColor, (newMatchColor) => {
 </script>
 
 <style scoped lang="postcss">
+.colorInput {
+  height: 46px;
+}
 </style>
