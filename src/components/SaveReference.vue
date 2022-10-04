@@ -3,10 +3,10 @@
     <input
       v-model="saveName"
       type="text"
-      class="input input-bordered mr-2"
+      class="input input-bordered input-sm mr-2"
     >
     <button
-      class="btn btn-outline"
+      class="btn btn-outline btn-sm"
       @click="save"
     >
       Save
@@ -33,7 +33,7 @@ const save = () => {
       input: colorStore.colorInput,
     }
   } else {
-    saving.references.push({
+    saving.references.unshift({
       name: saveName.value,
       input: colorStore.colorInput,
     })

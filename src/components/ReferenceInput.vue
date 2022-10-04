@@ -1,11 +1,12 @@
 <template>
   <div class="colorInput">
-    <h1>Input reference:</h1>
-    <p>Input a reference. This can be a list of colors, a css file, a tailwind config file, variables.scss etc</p>
+    <h1>Reference:</h1>
     <textarea
       v-model="colorInput"
-      placeholder="add multiple lines"
-      class="textarea textarea-bordered"
+      placeholder="Input a reference.&#10;
+      This can be a list of colors, a css file, a tailwind config file, variables.scss etc"
+      spellcheck="false"
+      class="textarea textarea-ghost whitespace-nowrap overflow-auto bg-black text-white"
     />
   </div>
 </template>
@@ -29,6 +30,13 @@ watch(colorInput, (updated) => {
   textarea {
     width: 100%;
     min-height: 400px;
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 12px;
+    line-height: 1.1em;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <select v-model="selected" class="select select-bordered">
+    <select v-model="selected" class="select select-bordered select-sm">
       <option
         v-for="save in localStorageSaves.references"
         :key="save.name"
@@ -9,7 +9,7 @@
       </option>
     </select>
     <button
-      class="btn"
+      class="btn btn-sm"
       :disabled="!saveAble"
       @click="load"
     >

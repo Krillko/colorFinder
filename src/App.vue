@@ -10,9 +10,17 @@
     <div class="third basis-1/3 mr-8 mt-8 stdbox">
       <ReferenceInput />
       <div class="flex justify-between">
-        <LoadReferences />
-        <SaveReference />
+        <div class="flex w-full">
+          <div class="grid h-20 flex-grow ">
+            <LoadReferences />
+          </div>
+          <div class="divider divider-horizontal" />
+          <div class="grid h-20 flex-grow ">
+            <SaveReference />
+          </div>
+        </div>
       </div>
+      <div class="text-2xs">For privacy reason, everything is in browser local storage. Nothing is uploaded, saved or even parse at a server. See about for more info</div>
     </div>
   </main>
 </template>
