@@ -1,7 +1,11 @@
 <template>
   <div class="colorInput">
-    <h1 class="headline mb-64">Input reference:</h1>
-    <textarea v-model="textarea" placeholder="add multiple lines" />
+    <h1 class="headline">Input reference:</h1>
+    <textarea
+      v-model="textarea"
+      placeholder="add multiple lines"
+      class="textarea textarea-bordered"
+    />
   </div>
 </template>
 
@@ -20,7 +24,6 @@ watch(textarea, (updated) => {
 
 <style scoped lang="postcss">
 .colorInput {
-  outline: 1px solid red;
   textarea {
     min-width: 750px;
     min-height: 400px;

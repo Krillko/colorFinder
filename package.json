@@ -8,22 +8,21 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
-
     "colorjs.io": "^0.4.0",
+    "daisyui": "^2.31.0",
     "pinia": "^2.0.22",
-
     "vue": "^3.2.40"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.12",
-    "postcss": "^8.4.17",
-    "tailwindcss": "^3.1.8",
     "@typescript-eslint/eslint-plugin": "^5.38.1",
     "@typescript-eslint/parser": "^5.38.1",
     "@vitejs/plugin-vue": "^3.1.0",
+    "autoprefixer": "^10.4.12",
     "eslint": "^8.24.0",
     "eslint-plugin-vue": "^9.5.1",
+    "postcss": "^8.4.17",
     "postcss-nested": "^5.0.6",
+    "tailwindcss": "^3.1.8",
     "typescript": "^4.8.4",
     "vite": "^3.1.4"
   }

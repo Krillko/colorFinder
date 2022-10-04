@@ -1,6 +1,10 @@
 <template>
   <div>
-    <input v-model="textInput" type="text">
+    <input
+      v-model="textInput"
+      type="text"
+      class="input input-bordered"
+    >
     <input v-model="colorStore.matchColor" type="color">
   </div>
 </template>
