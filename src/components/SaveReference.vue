@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div class="flex">
     <input
       v-model="saveName"
       type="text"
-      class="input input-bordered"
+      class="input input-bordered mr-2"
     >
     <button
       class="btn btn-outline"

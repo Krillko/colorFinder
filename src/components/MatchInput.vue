@@ -1,9 +1,12 @@
 <template>
   <div class="stdbox">
+    <h1>Test color:</h1>
+    <p>Select a color, or input as hex</p>
     <input
       v-model="textInput"
       type="text"
       class="input input-bordered"
+      autofocus
     >
     <input v-model="colorStore.matchColor" type="color">
   </div>

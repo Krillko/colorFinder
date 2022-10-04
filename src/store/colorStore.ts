@@ -18,13 +18,16 @@ export const useColorStore = defineStore('colors', {
       // Finding hex colors with alpha
       //const regex = /#([A-F0-9]{3,4}|[A-F0-9]{6}|[A-F0-9]{8})/ig
       const foundColors = input.match(regex)
-      console.log(foundColors)
-      this.colorInputParsed = foundColors.map((i) => {
-        return {
-          hex: i,
-          asWritten: i.toLowerCase(),
-        }
-      })
+      if (foundColors) {
+        this.colorInputParsed = foundColors.map((i) => {
+          return {
+            hex: i,
+            asWritten: i.toLowerCase(),
+          }
+        })
+      } else {
+        this.colorInputParsed = []
+      }
     },
   },
 })

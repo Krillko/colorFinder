@@ -1,6 +1,7 @@
 <template>
   <div class="colorInput">
-    <h1 class="headline">Input reference:</h1>
+    <h1>Input reference:</h1>
+    <p>Input a reference. This can be a list of colors, a css file, a tailwind config file, variables.scss etc</p>
     <textarea
       v-model="colorInput"
       placeholder="add multiple lines"
@@ -26,7 +27,7 @@ watch(colorInput, (updated) => {
 <style scoped lang="postcss">
 .colorInput {
   textarea {
-    min-width: 750px;
+    width: 100%;
     min-height: 400px;
   }
 }

@@ -2,15 +2,17 @@
   <main class="flex w-full items-start">
     <div class="first basis-1/3 p-8 ml-8">
       <MatchInput />
-      <ReferenceColors />
+      <MatchedColors />
     </div>
     <div class="second basis-1/3 p-8">
       <FoundColors />
     </div>
     <div class="third basis-1/3 mr-8 mt-8 stdbox">
       <ReferenceInput />
-      <LoadReferences />
-      <SaveReference />
+      <div class="flex justify-between">
+        <LoadReferences />
+        <SaveReference />
+      </div>
     </div>
   </main>
 </template>
@@ -19,7 +21,7 @@
 import ReferenceInput from './components/ReferenceInput.vue'
 import FoundColors from './components/FoundColors.vue'
 import MatchInput from './components/MatchInput.vue'
-import ReferenceColors from './components/ReferenceColors.vue'
+import MatchedColors from './components/MatchedColors.vue'
 import SaveReference from './components/SaveReference.vue'
 import LoadReferences from './components/LoadReferences.vue'
 import { onMounted } from 'vue'

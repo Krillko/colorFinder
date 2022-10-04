@@ -1,6 +1,6 @@
 <template>
   <div class="stdbox">
-    <h1>Matched</h1>
+    <h1>Matched colors</h1>
     <div v-if="matches.length" class="flex flex-col">
       <div
         v-for="(match, index) in matches"
