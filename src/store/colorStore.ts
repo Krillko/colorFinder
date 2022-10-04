@@ -3,9 +3,10 @@ import { defineStore } from 'pinia'
 export const useColorStore = defineStore('colors', {
   state: () => {
     return {
-      colorInput: '#ededed sldkfjsd posdjf sdpogj #eee #eeeeee hej #e100f3 #papapa',
-      colorInputParsed: ['#ededed', '#eee', '#eeeeee', '#e100f3'],
+      colorInput: '',
+      colorInputParsed: [],
       matchColor: '',
+      loadedReference: '',
     }
   },
   actions: {

@@ -2,7 +2,7 @@
   <div class="colorInput">
     <h1 class="headline">Input reference:</h1>
     <textarea
-      v-model="textarea"
+      v-model="colorInput"
       placeholder="add multiple lines"
       class="textarea textarea-bordered"
     />
@@ -12,12 +12,13 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
 import { useColorStore } from '../store/colorStore'
+import { storeToRefs } from 'pinia'
 
 const colorStore = useColorStore()
 
-const textarea = ref(colorStore.colorInput)
+const { colorInput } = storeToRefs(colorStore)
 
-watch(textarea, (updated) => {
+watch(colorInput, (updated) => {
   colorStore.parseColors(updated)
 })
 </script>
