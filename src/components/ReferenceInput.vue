@@ -1,6 +1,6 @@
 <template>
   <div class="colorInput">
-    <h1 class="headline">Input reference:</h1>
+    <h1 class="headline mb-64">Input reference:</h1>
     <textarea v-model="textarea" placeholder="add multiple lines" />
   </div>
 </template>
