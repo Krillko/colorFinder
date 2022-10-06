@@ -13,6 +13,8 @@ dist
 dist-ssr
 coverage
 *.local
+# build path for hosting static files
+public_html
 
 /cypress/videos/
 /cypress/screenshots/

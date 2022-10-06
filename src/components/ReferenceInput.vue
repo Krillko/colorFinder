@@ -37,6 +37,9 @@ watch(colorInput, (updated) => {
     &::-webkit-scrollbar {
       display: none;
     }
+    &:focus {
+      @apply text-white;
+    }
   }
 }
 </style>

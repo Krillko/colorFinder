@@ -18,3 +18,9 @@ $ npm install
 $ nvm use
 $ npm run dev
 ```
+
+## Build
+```sh
+$ npm run build
+```
+Files are build to `/public_html` instead of default to match my hosting. This can be set in `vite.config.js`
