@@ -17,6 +17,6 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: './colorfinder.dev/',
+    outDir: './public_html',
   },
 })
