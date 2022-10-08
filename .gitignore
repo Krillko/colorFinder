@@ -13,9 +13,6 @@ dist
 dist-ssr
 coverage
 *.local
-# build path for hosting static files
-public_html
-colorfinder.dev
 
 /cypress/videos/
 /cypress/screenshots/
