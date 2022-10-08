@@ -1,4 +1,5 @@
 <template>
+  <!--<TestOutput />-->
   <main class="flex w-full items-start">
     <div class="first basis-1/3 p-8 ml-8">
       <MatchInput />
@@ -35,6 +36,7 @@ import LoadReferences from './components/LoadReferences.vue'
 import { onMounted } from 'vue'
 import { saveFormat } from './types/saving'
 import { useColorStore } from './store/colorStore'
+import TestOutput from './components/TestOutput.vue'
 const colorStore = useColorStore()
 
 onMounted(() => {
