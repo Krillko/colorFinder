@@ -12,7 +12,7 @@
       <input
         v-model="colorStore.matchColor"
         type="color"
-        class="colorInput ml-2"
+        class="h-50 ml-2"
       >
     </div>
 
@@ -28,7 +28,7 @@
         <div v-else class="p-8">-</div>
       </div>
       <div v-if="showManipulate" class="p-8">
-        <div>Opacity</div>
+        <div><b>Opacity</b></div>
         <div class="flex w-full items-center">
           <div class="p-8 w-1/4">
             <input
@@ -49,7 +49,18 @@
             >
           </div>
         </div>
-        <ColorSwatch :hex="manipulationResult" />
+        <div class="flex items-center mb-36">
+          <div>Background color: </div>
+          <input
+            v-model="colorStore.manupulationBg"
+            type="color"
+            class="h-28 ml-2"
+          >
+        </div>
+        <div class="flex items-top">
+          <div class="mr-12"><b>Manipulated result:</b></div>
+          <ColorSwatch :hex="manipulationResult" />
+        </div>
       </div>
     </div>
   </div>
