@@ -69,9 +69,9 @@ const toggleAll = () => {
 }
 
 const bgStyle = computed(() => {
-  const isLight = wc_hex_is_light(colorStore.matchColor)
+  const isLight = wc_hex_is_light(colorStore.matchColorManipulated)
   return {
-    background: colorStore.matchColor,
+    background: colorStore.matchColorManipulated,
     color: isLight ? 'black':'white',
   }
 })
@@ -85,8 +85,8 @@ const bestPercent = computed(()=> {
 
 const matchesAll = computed(()=> {
   let output = []
-  if (colorStore.colorInputParsed.length && colorStore.matchColor) {
-    const matchColor = new Color(colorStore.matchColor)
+  if (colorStore.colorInputParsed.length && colorStore.matchColorManipulated) {
+    const matchColor = new Color(colorStore.matchColorManipulated)
     colorStore.colorInputParsed.map((i) => {
       const refColor = new Color(i.hex)
       const difference = matchColor.deltaE2000(refColor)

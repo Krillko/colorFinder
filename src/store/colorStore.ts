@@ -7,6 +7,12 @@ export const useColorStore = defineStore('colors', {
       colorInputParsed: [],
       matchColor: '',
       loadedReference: '',
+      /**
+       * @todo v-model sends back a string, see if it can be converted
+       */
+      manipulationOpacity: '100',
+      manupulationBg: '#ffffff',
+      matchColorManipulated: '',
     }
   },
   actions: {
