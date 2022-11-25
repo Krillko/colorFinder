@@ -18,10 +18,30 @@ $ nvm use
 $ npm install
 ```
 
+
+### Run as https
+#### Run once:  
+```sh
+// Install mkcert for creating a valid certificate (Mac OS):
+$ brew install mkcert
+$ mkcert -install
+$ npm install -g local-ssl-proxy
+```
+Run in this directory:
+```sh
+$ mkcert localhost
+```
+
 ### Run dev server
 ```sh
 $ nvm use
 $ npm run dev
+```
+
+To use https, in a separate tab:
+```sh
+// https running on port 3011 and forwarding requests to http 5173:
+$ local-ssl-proxy --source 3011 --target 5173 --cert localhost.pem --key localhost-key.pem
 ```
 
 ## Build
