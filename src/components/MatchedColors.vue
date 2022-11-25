@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="colorStore.colorInputParsed.length"
+    v-if="colorStore.colorInputParsed.length && colorStore.matchColorManipulated !== ''"
     class="matchedColors stdbox mt-8 border-none pl-8 border-b border-white"
     :style="bgStyle"
   >
