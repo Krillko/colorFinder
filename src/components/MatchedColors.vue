@@ -1,23 +1,41 @@
 <template>
-  <div class="matchedColors stdbox mt-8 border-none" :style="bgStyle">
-    <h1>Matched colors</h1>
+  <div class="matchedColors stdbox mt-8 border-none pl-8 border-b border-white" :style="bgStyle">
+    <div class="mb-24">
+      <h1 class="mb-12">Matched colors</h1>
+      <div v-if="bestPercent < 95">There where no close matches</div>
+      <div v-else>&nbsp;</div>
+    </div>
     <div v-if="matches.length" class="flex flex-col">
       <div
         v-for="(match, index) in matches"
         :key="`${match.hex}-${index}`"
-        class="match"
+        class="match mb-12"
       >
         <ColorSwatch :hex="match.hex" />
 
         <div :title="match.matchPercent" v-html="match.title" />
       </div>
     </div>
+    <button
+      v-if="!showAll && matches.length < matchesAll.length"
+      class="btn btn-sm mt-24"
+      @click="toggleAll"
+    >
+      Show all
+    </button>
+    <button
+      v-else-if="showAll"
+      class="btn btn-sm mt-24"
+      @click="toggleAll"
+    >
+      Show less
+    </button>
   </div>
 </template>
 
 <script setup lang="ts">
 import { useColorStore } from '../store/colorStore'
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import Color from 'colorjs.io'
 import ColorSwatch from './ColorSwatch.vue'
 const colorStore = useColorStore()
@@ -44,6 +62,12 @@ function wc_hex_is_light(color) {
   return brightness > 155
 }
 
+const showAll = ref(false)
+
+const toggleAll = () => {
+  showAll.value = ! showAll.value
+}
+
 const bgStyle = computed(() => {
   const isLight = wc_hex_is_light(colorStore.matchColor)
   return {
@@ -52,7 +76,14 @@ const bgStyle = computed(() => {
   }
 })
 
-const matches = computed(()=> {
+const bestPercent = computed(()=> {
+  if (matchesAll.value.length) {
+    return matchesAll.value.reduce((max, curren) => max.matchPercent > curren.matchPercent ? max : curren).matchPercent
+  }
+  return 0
+})
+
+const matchesAll = computed(()=> {
   let output = []
   if (colorStore.colorInputParsed.length && colorStore.matchColor) {
     const matchColor = new Color(colorStore.matchColor)
@@ -62,11 +93,13 @@ const matches = computed(()=> {
       const matchPercent = 100 - difference
       let matchHR
       if (matchPercent === 100) {
-        matchHR = 'Exact match'
-      } else if (matchPercent >= 99) {
-        matchHR = `<b>${round(matchPercent, 0, 2)}%</b>`
+        matchHR = '<h3>Exact match</h3>'
+      } else if (matchPercent >= 98) {
+        matchHR = `<h4>Almost identical: <b>${round(matchPercent, 0, 2)}%</b></h4>`
+      } else if (matchPercent >= 97) {
+        matchHR = `<h5>Very close: <b>${round(matchPercent, 0, 1)}%</b></h5>`
       } else if (matchPercent >= 95) {
-        matchHR = `<b>${round(matchPercent, 0, 1)}%</b>`
+        matchHR = `<h5>Close: <b>${round(matchPercent, 0, 1)}%</b></h5>`
       } else if (matchPercent >= 90) {
         matchHR = `<b>${Math.round(matchPercent)}%</b>`
       } else {
@@ -89,6 +122,19 @@ const matches = computed(()=> {
     }
     return 0
   })
+})
+
+const matches = computed(()=> {
+  if (matchesAll.value.length) {
+    if (showAll.value) {
+      return matchesAll.value
+    }
+    if (bestPercent.value >= 97) {
+      return matchesAll.value.filter((i) => i.matchPercent >= 97)
+    }
+    return [ ...matchesAll.value ].splice(0, 2)
+  }
+  return []
 })
 
 </script>
