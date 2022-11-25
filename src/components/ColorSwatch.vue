@@ -13,15 +13,17 @@
             background: hex,
           }"
         />
-        <div class="name">{{ hex }}</div>
+        <div class="name  text-black">{{ hex }}</div>
       </div>
     </div>
-    <div
-      class="info tooltip tooltip-bottom cursor-copy"
-      :data-tip="`Copy ${hex} to clipboard`"
-      @click="copyToClipboard"
-    >
-      {{ hex }}
+    <div>
+      <div
+        class="info tooltip tooltip-bottom cursor-copy"
+        :data-tip="`Copy ${hex} to clipboard`"
+        @click="copyToClipboard"
+      >
+        {{ hex }}
+      </div>
     </div>
   </div>
 </template>
