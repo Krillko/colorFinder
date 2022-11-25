@@ -1,6 +1,6 @@
 <template>
   <div class="stdbox">
-    <h2>Found</h2>
+    <h2 class="mb-12">Found refercence colors</h2>
     <div v-if="colorStore.colorInputParsed.length" class="swatches">
       <ColorSwatch
         v-for="(color, index) in colorStore.colorInputParsed"

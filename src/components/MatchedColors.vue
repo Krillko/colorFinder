@@ -1,5 +1,9 @@
 <template>
-  <div class="matchedColors stdbox mt-8 border-none pl-8 border-b border-white" :style="bgStyle">
+  <div
+    v-if="colorStore.colorInputParsed.length"
+    class="matchedColors stdbox mt-8 border-none pl-8 border-b border-white"
+    :style="bgStyle"
+  >
     <div class="mb-24">
       <h1 class="mb-12">Matched colors</h1>
       <div v-if="bestPercent < 95">There where no close matches</div>

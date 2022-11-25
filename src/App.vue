@@ -10,7 +10,7 @@
     </div>
     <div class="third basis-1/3 mr-8 mt-8 stdbox">
       <ReferenceInput />
-      <div class="flex justify-between">
+      <div class="flex justify-between min-h-40">
         <div class="flex w-full">
           <div class="grid h-20 flex-grow ">
             <LoadReferences />

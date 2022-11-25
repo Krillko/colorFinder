@@ -60,12 +60,7 @@ module.exports = {
       620: '38.75rem',
       680: '42.5rem',
       768: '48rem',
-      'header-desktop': '4rem',
-      'header-desktop-w': '6rem',
-      'header-desktop-club-selected': '7rem',
-      'header-desktop-w-club-selected': '9rem',
-      'fit-content': 'fit-content',
-      'slider-mobile': '96%',
+      'full': '100%',
     },
     height: (theme) => ({
       ...theme('spacing'),

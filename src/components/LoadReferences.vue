@@ -1,6 +1,9 @@
 <template>
-  <div>
-    <select v-model="selected" class="select select-bordered select-sm">
+  <div class="whitespace-nowrap">
+    <select
+      v-model="selected"
+      class="select select-bordered select-sm "
+    >
       <option
         v-for="save in localStorageSaves.references"
         :key="save.name"
